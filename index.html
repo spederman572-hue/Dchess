@@ -425,7 +425,13 @@ function renderProgress(){const saved=loadStore('dchess_checklist',[]),items=['P
 async function initEngine(){
  if(engine||engineReady||engineBooting)return;
  engineFailed=false;engineReady=false;engineBooting=true;
- const roots=[
+ 
+const roots=[
+  {label:'Local GitHub Pages files',base:new URL('./',location.href).href},
+  {label:'jsDelivr Stockfish 19.0.1',base:'https://cdn.jsdelivr.net/npm/stockfish@19.0.1/'},
+  {label:'unpkg Stockfish 19.0.1',base:'https://unpkg.com/stockfish@19.0.1/'},
+  {label:'GitHub Stockfish.js release 19.0.1',base:'https://github.com/nmrugg/stockfish.js/releases/download/v19.0.1/'}
+];
   {label:'jsDelivr Stockfish 19.0.1',base:'https://cdn.jsdelivr.net/npm/stockfish@19.0.1/'},
   {label:'unpkg Stockfish 19.0.1',base:'https://unpkg.com/stockfish@19.0.1/'},
   {label:'GitHub Stockfish.js release 19.0.1',base:'https://github.com/nmrugg/stockfish.js/releases/download/v19.0.1/'}
